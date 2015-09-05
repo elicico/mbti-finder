@@ -1,0 +1,26 @@
+{
+  "name": "mbti-finder",
+  "version": "0.0.2",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "watchify src/js/index.js -o dist/bundle.js -t reactify -v --debug & live-server --entry-file=index.html dist & watch 'sass src/styles/main.sass dist/tmp.css && postcss --use autoprefixer -o dist/main.css dist/tmp.css' src/styles -du"
+  },
+  "author": "Elise Cicognani",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "5.2.0",
+    "browserify": "11.0.1",
+    "live-server": "0.8.1",
+    "postcss-cli": "1.5.0",
+    "reactify": "1.1.1",
+    "watch": "0.16.0",
+    "watchify": "3.3.1"
+  },
+  "dependencies": {
+    "extend": "3.0.0",
+    "jsonp": "0.2.0",
+    "page": "1.6.3",
+    "react": "0.13.3"
+  }
+}
