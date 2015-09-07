@@ -49,16 +49,26 @@ var Extraverted = React.createClass({
              >
              Sentimento estroverso</input>
         </form>
+        <button
+          onClick={ this.handlePageChange }
+          >
+            Go on!
+        </button>
       </div>
     );
+  },
+
+  handlePerceptiveChange: function(e) {
+      this.props.perceptiveEx(e.currentTarget.value);
   },
 
   handleJudgingChange: function(e) {
       this.props.judgingEx(e.currentTarget.value);
   },
 
-  handlePerceptiveChange: function(e) {
-      this.props.perceptiveEx(e.currentTarget.value);
+  handlePageChange: function(e) {
+    e.preventDefault();
+    this.props.pageChange();
   }
 
   });

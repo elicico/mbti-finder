@@ -18,11 +18,19 @@ var App = React.createClass({
     switch (this.state.view) {
       case "extraverted":
         return <Extraverted
-          judgingEx={ this.handleJudgingChange }
-          perceptiveEx={ this.handlePerceptiveChange }
+          perceptiveEx={ this.handlePerceptiveExtrChange }
+          judgingEx={ this.handleJudgingExtrChange }
+          pageChange={ this.handlePageChange }
           />;
       case "introverted":
-        return <Introverted />;
+        return <Introverted
+          perceptiveEx={ this.props.perceptiveEx }
+          judgingEx={ this.props.judgingEx }
+          perceptiveIn={ this.handlePerceptiveIntrClick }
+          judgingIn={ this.handleJudgingIntrClick }
+          pageChange={ this.handlePageChange }
+          pageBack={ this.handlePageBack }
+          />;
       case "domrep":
         return <Domrep />;
       case "result":
@@ -30,17 +38,40 @@ var App = React.createClass({
     }
   },
 
-  handleJudgingChange: function(whatiwant) {
-    this.setState({
-      judgingExtr: whatiwant
-    });
+  handlePerceptiveExtrChange: function(percex) {
+    this.props.perceptiveEx = percex;
   },
 
-  handlePerceptiveChange: function(whatiwant) {
+  handleJudgingExtrChange: function(judgex) {
+    this.props.judgingEx = judgex;
+  },
+
+  handlePerceptiveIntrClick: function(percin) {
+    this.props.perceptiveIn = percin;
+  },
+
+  handleJudgingIntrClick: function(judgin) {
+    this.props.judgingIn = judgin;
+  },
+
+  handlePageChange: function() {
+    if (this.props.perceptiveEx && this.props.judgingEx !== null) {
+      if (this.props.perceptiveIn && this.props.judgingIn !== null) {
+        this.setState({
+          view: "domrep"
+        });
+      } else {
+          this.setState({
+            view: "introverted"
+          });
+        };
+    };
+  },
+
+  handlePageBack: function() {
     this.setState({
-      perceptiveExtr: whatiwant
+      view: "extraverted"
     });
-    debugger;
   },
 
   render: function() {
