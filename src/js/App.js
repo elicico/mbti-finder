@@ -32,7 +32,14 @@ var App = React.createClass({
           pageBack={ this.handlePageBack }
           />;
       case "domrep":
-        return <Domrep />;
+        return <Domrep
+          perceptiveEx={ this.props.perceptiveEx }
+          judgingEx={ this.props.judgingEx }
+          perceptiveIn={ this.props.perceptiveIn }
+          judgingIn={ this.props.judgingIn }
+          domFunction={ this.handleDomClick }
+          pageChange={ this.handleResultPageChange }
+          />;
       case "result":
         return <Result />;
     }
@@ -54,9 +61,13 @@ var App = React.createClass({
     this.props.judgingIn = judgin;
   },
 
+  handleDomClick: function(dominant) {
+    this.props.domFunction = dominant;
+  },
+
   handlePageChange: function() {
-    if (this.props.perceptiveEx && this.props.judgingEx !== null) {
-      if (this.props.perceptiveIn && this.props.judgingIn !== null) {
+    if (this.props.perceptiveEx && this.props.judgingEx !== undefined) {
+      if (this.props.perceptiveIn && this.props.judgingIn !== undefined) {
         this.setState({
           view: "domrep"
         });
@@ -66,6 +77,12 @@ var App = React.createClass({
           });
         };
     };
+  },
+
+  handleResultPageChange: function() {
+      this.setState({
+        view: "result"
+      });
   },
 
   handlePageBack: function() {
