@@ -41,7 +41,13 @@ var App = React.createClass({
           pageChange={ this.handleResultPageChange }
           />;
       case "result":
-        return <Result />;
+        return <Result
+          perceptiveEx={ this.props.perceptiveEx }
+          judgingEx={ this.props.judgingEx }
+          perceptiveIn={ this.props.perceptiveIn }
+          judgingIn={ this.props.judgingIn }
+          domFunction={ this.props.domFunction }
+          />;
     }
   },
 
