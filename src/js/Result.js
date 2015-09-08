@@ -2,7 +2,6 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 var Result = React.createClass({
-
   handleAcronym: function() {
     switch (this.props.domFunction) {
       case this.props.judgingIn:

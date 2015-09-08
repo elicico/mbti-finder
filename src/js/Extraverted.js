@@ -59,18 +59,17 @@ var Extraverted = React.createClass({
   },
 
   handlePerceptiveChange: function(e) {
-      this.props.perceptiveEx(e.currentTarget.value);
+    this.props.onPerceptiveEx(e.currentTarget.value);
   },
 
   handleJudgingChange: function(e) {
-      this.props.judgingEx(e.currentTarget.value);
+    this.props.onJudgingEx(e.currentTarget.value);
   },
 
   handlePageChange: function(e) {
     e.preventDefault();
-    this.props.pageChange();
+    this.props.onPageChange();
   }
-
-  });
+});
 
 module.exports = Extraverted;

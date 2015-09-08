@@ -10,7 +10,7 @@ var Domrep = React.createClass({
 
   handlePercex: function(e) {
     e.preventDefault();
-    this.props.domFunction(this.props.perceptiveEx);
+    this.props.onDomFunction(this.props.perceptiveEx);
     this.setState({
       view: this.props.perceptiveEx
     });
@@ -18,7 +18,7 @@ var Domrep = React.createClass({
 
   handlePercin: function(e) {
     e.preventDefault();
-    this.props.domFunction(this.props.perceptiveIn);
+    this.props.onDomFunction(this.props.perceptiveIn);
     this.setState({
       view: this.props.perceptiveIn
     });
@@ -26,7 +26,7 @@ var Domrep = React.createClass({
 
   handleJudgex: function(e) {
     e.preventDefault();
-    this.props.domFunction(this.props.judgingEx);
+    this.props.onDomFunction(this.props.judgingEx);
     this.setState({
       view: this.props.judgingEx
     });
@@ -34,7 +34,7 @@ var Domrep = React.createClass({
 
   handleJudgin: function(e) {
     e.preventDefault();
-    this.props.domFunction(this.props.judgingIn);
+    this.props.onDomFunction(this.props.judgingIn);
     this.setState({
       view: this.props.judgingIn
     });
@@ -96,12 +96,12 @@ var Domrep = React.createClass({
 
   handleResultPageChange: function(e) {
     e.preventDefault();
-    this.props.pageChange();
+    this.props.onPageChange();
   },
 
   handlePageBack: function(e) {
     e.preventDefault();
-    this.props.pageBack();
+    this.props.onPageBack();
   }
 
 });

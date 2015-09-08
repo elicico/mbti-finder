@@ -8,108 +8,95 @@ var App = React.createClass({
   getInitialState: function() {
     return {
       view: "extraverted",
-      perceptiveExtr: null,
-      judgingExtr: null
+      perceptiveEx: null,
+      judgingEx: null,
+      domFunction: null
     };
   },
 
-
-  handlePerceptiveExtrChange: function(percex) {
-    this.props.perceptiveEx = percex;
+  handleStateChange: function(key, value) {
+    var toChange = {};
+    toChange[key] = value;
+    this.setState(toChange);
   },
 
-  handleJudgingExtrChange: function(judgex) {
-    this.props.judgingEx = judgex;
-  },
-
-  handlePerceptiveIntrClick: function(percin) {
-    this.props.perceptiveIn = percin;
-  },
-
-  handleJudgingIntrClick: function(judgin) {
-    this.props.judgingIn = judgin;
-  },
-
-  handleDomClick: function(dominant) {
-    this.props.domFunction = dominant;
-  },
-
-  handlePageChange: function() {
-    if (this.props.perceptiveEx && this.props.judgingEx !== undefined) {
-      if (this.props.perceptiveIn && this.props.judgingIn !== undefined) {
-        this.setState({
-          view: "domrep"
-        });
-      } else {
-          this.setState({
-            view: "introverted"
-          });
-        };
-    };
-  },
-
-  handleResultPageChange: function() {
-      this.setState({
-        view: "result"
-      });
+  handlePageChange: function(view) {
+    this.setState({ view: view });
   },
 
   handlePageBack: function() {
-    this.props.judgingIn = "";
-    this.props.judgingEx = "";
-    this.props.perceptiveIn = "";
-    this.props.perceptiveIn = "";
     this.setState({
+      judgingEx: null,
+      perceptiveEx: null,
       view: "extraverted"
     });
   },
 
   render: function() {
+    var perceptiveIn = this.state.perceptiveEx === "Ne" ?
+      "Si" : "Ni";
+
+    var judgingIn = this.state.judgingEx === "Te" ?
+      "Fi" : "Ti";
+
     switch (this.state.view) {
       case "extraverted":
-        return (
-          <Extraverted
-            perceptiveEx={ this.handlePerceptiveExtrChange }
-            judgingEx={ this.handleJudgingExtrChange }
-            pageChange={ this.handlePageChange }
-          />
-        );
+        return this.renderExtraverted();
       case "introverted":
-        return (
-          <Introverted
-            perceptiveEx={ this.props.perceptiveEx }
-            judgingEx={ this.props.judgingEx }
-            perceptiveIn={ this.handlePerceptiveIntrClick }
-            judgingIn={ this.handleJudgingIntrClick }
-            pageChange={ this.handlePageChange }
-            pageBack={ this.handlePageBack }
-          />
-        );
+        return this.renderIntroverted(perceptiveIn, judgingIn);
       case "domrep":
-        return (
-          <Domrep
-            perceptiveEx={ this.props.perceptiveEx }
-            judgingEx={ this.props.judgingEx }
-            perceptiveIn={ this.props.perceptiveIn }
-            judgingIn={ this.props.judgingIn }
-            domFunction={ this.handleDomClick }
-            pageChange={ this.handleResultPageChange }
-            pageBack={ this.handlePageBack }
-          />
-        );
+        return this.renderDomrep(perceptiveIn, judgingIn);
       case "result":
-        return (
-          <Result
-            perceptiveEx={ this.props.perceptiveEx }
-            judgingEx={ this.props.judgingEx }
-            perceptiveIn={ this.props.perceptiveIn }
-            judgingIn={ this.props.judgingIn }
-            domFunction={ this.props.domFunction }
-          />
-        );
+        return this.renderResult(perceptiveIn, judgingIn);
     }
   },
 
+  renderExtraverted: function() {
+    return (
+      <Extraverted
+        onPerceptiveEx={ this.handleStateChange.bind(this, "perceptiveEx") }
+        onJudgingEx={ this.handleStateChange.bind(this, "judgingEx") }
+        onPageChange={ this.handlePageChange.bind(this, "introverted") }
+      />
+    );
+  },
+
+  renderIntroverted: function(perceptiveIn, judgingIn) {
+    return (
+      <Introverted
+        perceptiveIn={ perceptiveIn }
+        judgingIn={ judgingIn }
+        onPageChange={ this.handlePageChange.bind(this, "domrep") }
+        onPageBack={ this.handlePageBack }
+      />
+    );
+  },
+
+  renderDomrep: function(perceptiveIn, judgingIn) {
+    return (
+      <Domrep
+        perceptiveEx={ this.state.perceptiveEx }
+        judgingEx={ this.state.judgingEx }
+        perceptiveIn={ perceptiveIn }
+        judgingIn={ judgingIn }
+        onDomFunction={ this.handleStateChange.bind(this, "domFunction") }
+        onPageChange={ this.handlePageChange.bind(this, "result") }
+        onPageBack={ this.handlePageBack }
+      />
+    );
+  },
+
+  renderResult: function(perceptiveIn, judgingIn) {
+    return (
+      <Result
+        perceptiveEx={ this.state.perceptiveEx }
+        judgingEx={ this.state.judgingEx }
+        domFunction={ this.state.domFunction }
+        perceptiveIn={ perceptiveIn }
+        judgingIn={ judgingIn }
+      />
+    );
+  }
 });
 
 module.exports = App;
