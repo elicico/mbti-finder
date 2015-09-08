@@ -39,6 +39,7 @@ var App = React.createClass({
           judgingIn={ this.props.judgingIn }
           domFunction={ this.handleDomClick }
           pageChange={ this.handleResultPageChange }
+          pageBack={ this.handlePageBack }
           />;
       case "result":
         return <Result
@@ -92,6 +93,10 @@ var App = React.createClass({
   },
 
   handlePageBack: function() {
+    this.props.judgingIn = "";
+    this.props.judgingEx = "";
+    this.props.perceptiveIn = "";
+    this.props.perceptiveIn = "";
     this.setState({
       view: "extraverted"
     });

@@ -5,6 +5,7 @@ var Introverted = React.createClass({
 
   handlePerceptiveIntrView: function() {
     if(this.props.perceptiveEx === "Ne") {
+      this.props.perceptiveIn("Si");
       return (
         <div>
           <div>
@@ -13,14 +14,10 @@ var Introverted = React.createClass({
           <div>
             bla bla bla
           </div>
-          <button
-            onClick={ this.props.perceptiveIn("Si") }
-            >
-              Check
-          </button>
         </div>
       );
     } else {
+        this.props.perceptiveIn("Ni");
         return (
           <div>
             <div>
@@ -29,11 +26,6 @@ var Introverted = React.createClass({
             <div>
               bla bla bla
             </div>
-            <button
-              onClick={ this.props.perceptiveIn("Ni") }
-              >
-                Check
-            </button>
           </div>
         );
     }
@@ -41,6 +33,7 @@ var Introverted = React.createClass({
 
   handleJudgingIntrView: function() {
     if(this.props.judgingEx === "Te") {
+      this.props.judgingIn("Fi");
       return (
         <div>
           <div>
@@ -49,14 +42,10 @@ var Introverted = React.createClass({
           <div>
             bla bla bla
           </div>
-          <button
-            onClick={ this.props.judgingIn("Fi") }
-            >
-              Check
-          </button>
         </div>
       );
     } else {
+        this.props.judgingIn("Ti");
         return (
           <div>
             <div>
@@ -65,11 +54,6 @@ var Introverted = React.createClass({
             <div>
               bla bla bla
             </div>
-            <button
-              onClick={ this.props.judgingIn("Ti") }
-              >
-                Check
-            </button>
           </div>
         );
     }

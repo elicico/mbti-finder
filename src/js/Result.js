@@ -29,8 +29,7 @@ var Result = React.createClass({
             Your type is E{ this.props.perceptiveEx.slice(0, 1) }{ this.props.judgingIn.slice(0, 1) }P
           </div>
         );
-    }
-    debugger;
+    };
   },
 
   render: function() {
