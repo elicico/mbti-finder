@@ -3,7 +3,6 @@ var Extraverted = require("./Extraverted");
 var Introverted = require("./Introverted");
 var Domrep = require("./Domrep");
 var Result = require("./Result");
-var PropTypes = React.PropTypes;
 
 var App = React.createClass({
   getInitialState: function() {
@@ -14,43 +13,6 @@ var App = React.createClass({
     };
   },
 
-  handleView: function() {
-    switch (this.state.view) {
-      case "extraverted":
-        return <Extraverted
-          perceptiveEx={ this.handlePerceptiveExtrChange }
-          judgingEx={ this.handleJudgingExtrChange }
-          pageChange={ this.handlePageChange }
-          />;
-      case "introverted":
-        return <Introverted
-          perceptiveEx={ this.props.perceptiveEx }
-          judgingEx={ this.props.judgingEx }
-          perceptiveIn={ this.handlePerceptiveIntrClick }
-          judgingIn={ this.handleJudgingIntrClick }
-          pageChange={ this.handlePageChange }
-          pageBack={ this.handlePageBack }
-          />;
-      case "domrep":
-        return <Domrep
-          perceptiveEx={ this.props.perceptiveEx }
-          judgingEx={ this.props.judgingEx }
-          perceptiveIn={ this.props.perceptiveIn }
-          judgingIn={ this.props.judgingIn }
-          domFunction={ this.handleDomClick }
-          pageChange={ this.handleResultPageChange }
-          pageBack={ this.handlePageBack }
-          />;
-      case "result":
-        return <Result
-          perceptiveEx={ this.props.perceptiveEx }
-          judgingEx={ this.props.judgingEx }
-          perceptiveIn={ this.props.perceptiveIn }
-          judgingIn={ this.props.judgingIn }
-          domFunction={ this.props.domFunction }
-          />;
-    }
-  },
 
   handlePerceptiveExtrChange: function(percex) {
     this.props.perceptiveEx = percex;
@@ -103,12 +65,50 @@ var App = React.createClass({
   },
 
   render: function() {
-    return (
-      <div>
-        { this.handleView() }
-      </div>
-    );
-  }
+    switch (this.state.view) {
+      case "extraverted":
+        return (
+          <Extraverted
+            perceptiveEx={ this.handlePerceptiveExtrChange }
+            judgingEx={ this.handleJudgingExtrChange }
+            pageChange={ this.handlePageChange }
+          />
+        );
+      case "introverted":
+        return (
+          <Introverted
+            perceptiveEx={ this.props.perceptiveEx }
+            judgingEx={ this.props.judgingEx }
+            perceptiveIn={ this.handlePerceptiveIntrClick }
+            judgingIn={ this.handleJudgingIntrClick }
+            pageChange={ this.handlePageChange }
+            pageBack={ this.handlePageBack }
+          />
+        );
+      case "domrep":
+        return (
+          <Domrep
+            perceptiveEx={ this.props.perceptiveEx }
+            judgingEx={ this.props.judgingEx }
+            perceptiveIn={ this.props.perceptiveIn }
+            judgingIn={ this.props.judgingIn }
+            domFunction={ this.handleDomClick }
+            pageChange={ this.handleResultPageChange }
+            pageBack={ this.handlePageBack }
+          />
+        );
+      case "result":
+        return (
+          <Result
+            perceptiveEx={ this.props.perceptiveEx }
+            judgingEx={ this.props.judgingEx }
+            perceptiveIn={ this.props.perceptiveIn }
+            judgingIn={ this.props.judgingIn }
+            domFunction={ this.props.domFunction }
+          />
+        );
+    }
+  },
 
 });
 
