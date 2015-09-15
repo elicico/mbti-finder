@@ -2,41 +2,33 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 var Result = React.createClass({
-  handleAcronym: function() {
+  render: function() {
     switch (this.props.domFunction) {
       case this.props.judgingIn:
         return (
           <div>
-            Your type is I{ this.props.perceptiveEx.slice(0, 1) }{ this.props.judgingIn.slice(0, 1) }P
+            Your type is I{ this.props.perceptiveEx[0] }{ this.props.judgingIn[0] }P
           </div>
         );
       case this.props.judgingEx:
         return (
           <div>
-            Your type is E{ this.props.perceptiveIn.slice(0, 1) }{ this.props.judgingEx.slice(0, 1) }J
+            Your type is E{ this.props.perceptiveIn[0] }{ this.props.judgingEx[0] }J
           </div>
         );
       case this.props.perceptiveIn:
         return (
           <div>
-            Your type is I{ this.props.perceptiveIn.slice(0, 1) }{ this.props.judgingEx.slice(0, 1) }J
+            Your type is I{ this.props.perceptiveIn[0] }{ this.props.judgingEx[0] }J
           </div>
         );
       case this.props.perceptiveEx:
         return (
           <div>
-            Your type is E{ this.props.perceptiveEx.slice(0, 1) }{ this.props.judgingIn.slice(0, 1) }P
+            Your type is E{ this.props.perceptiveEx[0] }{ this.props.judgingIn[0] }P
           </div>
         );
     };
-  },
-
-  render: function() {
-    return (
-      <div>
-        { this.handleAcronym() }
-      </div>
-    );
   }
 
 });

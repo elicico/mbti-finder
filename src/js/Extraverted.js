@@ -1,53 +1,43 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
+var extraverted = {
+  "Ne": "Intuizione estroversa",
+  "Se": "Sensazione estroversa",
+  "Te": "Pensiero estroverso",
+  "Fe": "Sentimento estroverso"
+};
+
 var Extraverted = React.createClass({
-  getInitialState: function() {
-    return {
-      perceptiveExtr: null,
-      judgingExtr: null
+  handleExtravertedChange: function(key, value, e) {
+    if (key === "perceptiveEx") {
+      this.props.onPerceptiveEx(value);
+    } else {
+      this.props.onJudgingEx(value);
     };
   },
 
+  handlePageChange: function(e) {
+    e.preventDefault();
+    this.props.onPageChange();
+  },
+
   render: function() {
+
     return (
       <div>
         <h1>Vediamo se funzionano le cose</h1>
         <p className="question">Qui ci va la domanda per la funzione estroversa percettiva</p>
         <form>
-          <input
-            type="radio"
-            name="perceptive-extr"
-            onChange={ this.handlePerceptiveChange }
-            value="Ne"
-            >
-            Intuizione estroversa
-          </input>
-          <br></br>
-          <input
-            type="radio"
-            name="perceptive-extr"
-            onChange={ this.handlePerceptiveChange }
-            value="Se"
-            >Sensazione estroversa</input>
+          { this.renderExtraverted("perceptiveEx", "Ne") }
+          <br/>
+          { this.renderExtraverted("perceptiveEx", "Se") }
         </form>
         <p className="question">Qui ci va la domanda per la funzione estroversa giudicante</p>
         <form>
-           <input
-             type="radio"
-             name="judging-extr"
-             onChange={ this.handleJudgingChange }
-             value="Te"
-             >
-             Pensiero estroverso</input>
-           <br></br>
-           <input
-             type="radio"
-             name="judging-extr"
-             onChange={ this.handleJudgingChange }
-             value="Fe"
-             >
-             Sentimento estroverso</input>
+          { this.renderExtraverted("judgingEx", "Te") }
+          <br/>
+          { this.renderExtraverted("judgingEx", "Fe") }
         </form>
         <button
           onClick={ this.handlePageChange }
@@ -58,17 +48,16 @@ var Extraverted = React.createClass({
     );
   },
 
-  handlePerceptiveChange: function(e) {
-    this.props.onPerceptiveEx(e.currentTarget.value);
-  },
-
-  handleJudgingChange: function(e) {
-    this.props.onJudgingEx(e.currentTarget.value);
-  },
-
-  handlePageChange: function(e) {
-    e.preventDefault();
-    this.props.onPageChange();
+  renderExtraverted: function(key, value) {
+    return <input
+            type="radio"
+            name= { key }
+            onChange={ this.handleExtravertedChange.bind(this, key, value) }
+            value= { value }
+            checked={ this.props[key] === value }
+          >
+            { extraverted[value] }
+          </input>
   }
 });
 

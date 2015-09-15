@@ -54,6 +54,8 @@ var App = React.createClass({
   renderExtraverted: function() {
     return (
       <Extraverted
+        perceptiveEx={ this.state.perceptiveEx }
+        judgingEx={ this.state.judgingEx }
         onPerceptiveEx={ this.handleStateChange.bind(this, "perceptiveEx") }
         onJudgingEx={ this.handleStateChange.bind(this, "judgingEx") }
         onPageChange={ this.handlePageChange.bind(this, "introverted") }

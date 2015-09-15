@@ -1,6 +1,13 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
+var descriptions = {
+  'Si': 'Bla bla bla Si',
+  'Ni': 'Bla bla bla Ni',
+  'Ti': 'Bla bla bla Ti',
+  'Fi': 'Bla bla bla Fi'
+};
+
 var Introverted = React.createClass({
   handlePageChange: function(e) {
     e.preventDefault();
@@ -15,31 +22,22 @@ var Introverted = React.createClass({
   render: function() {
     return (
       <div>
-        { this.renderPerceptiveIntrView() }
-        { this.renderJudgingIntrView() }
+        { this.renderIntrView("perceptiveIn") }
+        { this.renderIntrView("judgingIn") }
         <button onClick={ this.handlePageChange }>Go on!</button>
         <button onClick={ this.handlePageBack }>Go back!</button>
       </div>
     );
   },
 
-  renderPerceptiveIntrView: function() {
+  renderIntrView: function(key) {
     return (
       <div>
-        <div>Riconosci { this.props.perceptiveIn }?</div>
-        <div>bla bla bla</div>
+        <div>Riconosci { this.props[key] }?</div>
+        <div>{ descriptions[this.props[key]] }</div>
       </div>
     );
-  },
-
-  renderJudgingIntrView: function() {
-    return (
-      <div>
-        <div>Riconosci { this.props.judgingIn }?</div>
-        <div>bla bla bla</div>
-      </div>
-    );
-  },
+  }
 });
 
 module.exports = Introverted;

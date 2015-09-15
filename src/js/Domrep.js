@@ -1,6 +1,13 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
+var selectedFunctions = {
+  "perceptiveEx": "perceptiveIn",
+  "perceptiveIn": "perceptiveEx",
+  "judgingEx": "judgingIn",
+  "judgingIn": "judgingEx"
+};
+
 var Domrep = React.createClass({
   getInitialState: function() {
     return {
@@ -8,36 +15,22 @@ var Domrep = React.createClass({
     };
   },
 
-  handlePercex: function(e) {
+  handleDominant: function(dominant, e) {
     e.preventDefault();
-    this.props.onDomFunction(this.props.perceptiveEx);
+    this.props.onDomFunction(dominant);
     this.setState({
-      view: this.props.perceptiveEx
+      view: dominant
     });
   },
 
-  handlePercin: function(e) {
+  handleResultPageChange: function(e) {
     e.preventDefault();
-    this.props.onDomFunction(this.props.perceptiveIn);
-    this.setState({
-      view: this.props.perceptiveIn
-    });
+    this.props.onPageChange();
   },
 
-  handleJudgex: function(e) {
+  handlePageBack: function(e) {
     e.preventDefault();
-    this.props.onDomFunction(this.props.judgingEx);
-    this.setState({
-      view: this.props.judgingEx
-    });
-  },
-
-  handleJudgin: function(e) {
-    e.preventDefault();
-    this.props.onDomFunction(this.props.judgingIn);
-    this.setState({
-      view: this.props.judgingIn
-    });
+    this.props.onPageBack();
   },
 
   render: function() {
@@ -47,38 +40,7 @@ var Domrep = React.createClass({
           which one is dominant? Does it fit with the repressed associated?
         </div>
         <ul>
-          <li>
-            <a href="#"
-              onClick={ this.handlePercex }
-              >
-              { this.props.perceptiveEx }
-            </a>
-            { this.state.view === this.props.perceptiveEx ? (<div>your repressed is { this.props.perceptiveIn }</div>) : (<div></div>) }
-          </li>
-          <li>
-            <a href="#"
-              onClick={ this.handlePercin }
-              >
-              { this.props.perceptiveIn }
-            </a>
-            { this.state.view === this.props.perceptiveIn ? (<div>your repressed is { this.props.perceptiveEx }</div>) : (<div></div>) }
-          </li>
-          <li>
-            <a href="#"
-              onClick={ this.handleJudgex }
-              >
-              { this.props.judgingEx }
-            </a>
-            { this.state.view === this.props.judgingEx ? (<div>your repressed is { this.props.judgingIn }</div>) : (<div></div>) }
-          </li>
-          <li>
-            <a href="#"
-              onClick={ this.handleJudgin }
-              >
-              { this.props.judgingIn }
-            </a>
-            { this.state.view === this.props.judgingIn ? (<div>your repressed is { this.props.judgingEx }</div>) : (<div></div>) }
-          </li>
+          { this.renderList() }
         </ul>
         <button
           onClick={ this.handlePageBack }
@@ -94,14 +56,21 @@ var Domrep = React.createClass({
     );
   },
 
-  handleResultPageChange: function(e) {
-    e.preventDefault();
-    this.props.onPageChange();
+  renderList: function() {
+    return Object.keys(selectedFunctions).map(this.renderFunctions);
   },
 
-  handlePageBack: function(e) {
-    e.preventDefault();
-    this.props.onPageBack();
+  renderFunctions: function(key) {
+    return <li
+            key={ key }
+            >
+             <a href="#"
+                onClick={ this.handleDominant.bind(this, this.props[key]) }
+                >
+                  { this.props[key] }
+             </a>
+             { this.state.view === this.props[key] ? (<div>your repressed is { this.props[selectedFunctions[key]] }</div>) : (<div></div>) }
+           </li>
   }
 
 });
