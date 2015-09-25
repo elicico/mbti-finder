@@ -55,14 +55,14 @@ var App = React.createClass({
   },
 
   handlePageChange: function(key, value) {
-    var toChange = {};
+    var toChange = { transition: "transition-push" };
     toChange[key] = value;
     this.setState(toChange);
   },
 
   handlePageBack: function() {
     var key = KEY_TO_RESET[this.calculateStep()];
-    var toBack = {};
+    var toBack = { transition: "transition-pop" };
     toBack[key] = null;
     this.setState(toBack);
   },
@@ -82,8 +82,10 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <ReactCSSTransitionGroup transitionName="page-transition">
+        <ReactCSSTransitionGroup transitionName="transition-slide">
           { this.renderNavbar() }
+        </ReactCSSTransitionGroup>
+        <ReactCSSTransitionGroup transitionName={ this.state.transition }>
           { this.renderPages() }
         </ReactCSSTransitionGroup>
           { this.renderModal() }
@@ -127,7 +129,7 @@ var App = React.createClass({
     if (this.state.splashDismissed) {
       return (
         <Navbar
-          key= {"navbar" + this.calculateStep() }
+          key="navbar"
           onPageBack={ this.handlePageBack }
           onPageHelp={ this.handlePageHelp }
           title={ TITLES[this.calculateStep()] }

@@ -160,7 +160,12 @@ var Dominant = React.createClass({
   },
 
   render: function() {
-    var functions = [ this.props.exFunctions[0], this.props.exFunctions[1], this.state.inPerceiving, this.state.inJudging ];
+    var functions = [
+      this.props.exFunctions[0],
+      this.props.exFunctions[1],
+      this.state.inPerceiving,
+      this.state.inJudging
+    ];
 
     return (
       <div className="container-absolute">
@@ -174,13 +179,11 @@ var Dominant = React.createClass({
     );
   },
 
-  renderFunctionButton: function(function) {
+  renderFunctionButton: function(f) {
     return (
-      <div>BOTTONE { function }</div>
-
+      <div>BOTTONE { f }</div>
     );
   }
-
 });
 
 module.exports = Dominant;
