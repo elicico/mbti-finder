@@ -1,104 +1,152 @@
-var React = require('react');
-var Extraverted = require("./Extraverted");
-var Introverted = require("./Introverted");
-var Domrep = require("./Domrep");
+var React = require('react/addons');
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+var Navbar = require("./Navbar");
+var Modal = require("./Modal");
+var Splash = require("./Splash");
+var Functions = require("./Functions");
+var Dominant = require("./Dominant");
 var Result = require("./Result");
+var PropTypes = React.PropTypes;
+
+var TITLES = {
+  "perc": "Perceivings",
+  "judg": "Judgings",
+  "dom": "Dominant",
+  "res": "Result"
+};
+
+var KEY_TO_RESET = {
+  "perc": "splashDismissed",
+  "judg": "exPerceiving",
+  "dom": "exJudging",
+  "res": "dominant"
+};
 
 var App = React.createClass({
   getInitialState: function() {
     return {
-      view: "extraverted",
-      perceptiveEx: null,
-      judgingEx: null,
-      domFunction: null
+      splashDismissed: false,
+      exPerceiving: null,
+      exJudging: null,
+      dominant: null,
+      modalIsOpen: false,
+      modalContent: null
     };
   },
 
-  handleStateChange: function(key, value) {
+  calculateStep: function() {
+    if (!this.state.splashDismissed) {
+      return "spl";
+    } else if (!this.state.exPerceiving) {
+      return "perc";
+    } else if (!this.state.exJudging) {
+      return "judg";
+    } else if (!this.state.dominant) {
+      return "dom";
+    } else {
+      return "res";
+    }
+  },
+
+  setModalContent: function(content) {
+    this.setState({
+      modalContent: content
+    });
+  },
+
+  handlePageChange: function(key, value) {
     var toChange = {};
     toChange[key] = value;
     this.setState(toChange);
   },
 
-  handlePageChange: function(view) {
-    this.setState({ view: view });
+  handlePageBack: function() {
+    var key = KEY_TO_RESET[this.calculateStep()];
+    var toBack = {};
+    toBack[key] = null;
+    this.setState(toBack);
   },
 
-  handlePageBack: function() {
+  handlePageHelp: function() {
     this.setState({
-      judgingEx: null,
-      perceptiveEx: null,
-      view: "extraverted"
+      modalIsOpen: true
+    });
+  },
+
+  handleModalClose: function() {
+    this.setState({
+      modalIsOpen: false
     });
   },
 
   render: function() {
-    var perceptiveIn = this.state.perceptiveEx === "Ne" ?
-      "Si" : "Ni";
+    return (
+      <div>
+        <ReactCSSTransitionGroup transitionName="page-transition">
+          { this.renderNavbar() }
+          { this.renderPages() }
+        </ReactCSSTransitionGroup>
+          { this.renderModal() }
+      </div>
+    );
+  },
 
-    var judgingIn = this.state.judgingEx === "Te" ?
-      "Fi" : "Ti";
-
-    switch (this.state.view) {
-      case "extraverted":
-        return this.renderExtraverted();
-      case "introverted":
-        return this.renderIntroverted(perceptiveIn, judgingIn);
-      case "domrep":
-        return this.renderDomrep(perceptiveIn, judgingIn);
-      case "result":
-        return this.renderResult(perceptiveIn, judgingIn);
+  renderPages: function() {
+    switch (this.calculateStep()) {
+      case "spl":
+        return <Splash key="splash"
+                  onContinue={ this.handlePageChange.bind(this, "splashDismissed", true) }
+                />;
+      case "perc":
+        return <Functions
+                  key="perceivings"
+                  isJudging= {false}
+                  setModalContent={ this.setModalContent }
+                  onSelect={ this.handlePageChange.bind(this, "exPerceiving") }
+                />;
+      case "judg":
+        return <Functions
+                  key="judgings"
+                  isJudging= {true}
+                  setModalContent={ this.setModalContent }
+                  onSelect={ this.handlePageChange.bind(this, "exJudging") }
+                />;
+      case "dom":
+        return <Dominant
+                  key="dominant"
+                  exFunctions={ [this.state.exPerceiving, this.state.exJudging] }
+                  setModalContent={ this.setModalContent }
+                  onSelect={ this.handlePageChange.bind(this, "dominant") }
+                />;
+      case "res":
+        return <Result key="result" />;
     }
   },
 
-  renderExtraverted: function() {
-    return (
-      <Extraverted
-        perceptiveEx={ this.state.perceptiveEx }
-        judgingEx={ this.state.judgingEx }
-        onPerceptiveEx={ this.handleStateChange.bind(this, "perceptiveEx") }
-        onJudgingEx={ this.handleStateChange.bind(this, "judgingEx") }
-        onPageChange={ this.handlePageChange.bind(this, "introverted") }
-      />
-    );
+  renderNavbar: function() {
+    if (this.state.splashDismissed) {
+      return (
+        <Navbar
+          key= {"navbar" + this.calculateStep() }
+          onPageBack={ this.handlePageBack }
+          onPageHelp={ this.handlePageHelp }
+          title={ TITLES[this.calculateStep()] }
+        />
+      );
+    }
   },
 
-  renderIntroverted: function(perceptiveIn, judgingIn) {
+  renderModal: function() {
     return (
-      <Introverted
-        perceptiveIn={ perceptiveIn }
-        judgingIn={ judgingIn }
-        onPageChange={ this.handlePageChange.bind(this, "domrep") }
-        onPageBack={ this.handlePageBack }
-      />
-    );
-  },
-
-  renderDomrep: function(perceptiveIn, judgingIn) {
-    return (
-      <Domrep
-        perceptiveEx={ this.state.perceptiveEx }
-        judgingEx={ this.state.judgingEx }
-        perceptiveIn={ perceptiveIn }
-        judgingIn={ judgingIn }
-        onDomFunction={ this.handleStateChange.bind(this, "domFunction") }
-        onPageChange={ this.handlePageChange.bind(this, "result") }
-        onPageBack={ this.handlePageBack }
-      />
-    );
-  },
-
-  renderResult: function(perceptiveIn, judgingIn) {
-    return (
-      <Result
-        perceptiveEx={ this.state.perceptiveEx }
-        judgingEx={ this.state.judgingEx }
-        domFunction={ this.state.domFunction }
-        perceptiveIn={ perceptiveIn }
-        judgingIn={ judgingIn }
-      />
+      <Modal
+        isOpen={ this.state.modalIsOpen }
+        onClose={ this.handleModalClose }
+      >
+        { this.state.modalContent }
+      </Modal>
     );
   }
+
 });
 
 module.exports = App;
