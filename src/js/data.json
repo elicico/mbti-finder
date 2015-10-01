@@ -8,17 +8,17 @@
         "modalDescriptionEx": [
           "<ul class='modal__content__text__ul'>",
             "<li>Thinking focused in the outside world</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes efficiency, applying logical order to the objective world through building structures and making decisions</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes to use charts, tables, graphs, to help cause/effect thinking and pro/cons analysis</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Tends to compartmentalize many aspects of life in order to better accomplish objectives</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Challenges someone's ideas through empirical thinking, often supported with facts, trying to establish order in someone else's process of thinking</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes order, organization, logical debates</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is good at contingency planning, scheduling, quantifying</li>",
           "</ul>"
         ],
@@ -26,17 +26,17 @@
         "modalDescriptionIn": [
           "<ul class='modal__content__text__ul'>",
             "<li>Looks within for feelings and values, trusting and sticking to them, particularly if the rest of the crowd does not</li>",
-            "<div class='modal__line-break'></div>",
+            
             "<li>Is attentive to ethical concerns, striving to fulfill deeply passionate ideas</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Possesses a strong sense of moral and a strong personal sense of right and wrong</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Seeks harmony through alignment of deeply felt values to personal behaviour</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Often uses feelings as a filter for incoming information that matches what is valued, wanted, or worth believing in</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Internal sense of reading fine distinctions among feeling tones helps to know when people are being fake, insincere or good</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Rarely expresses through actions in the outside world</li>",
           "</ul>"
         ]
@@ -48,17 +48,17 @@
         "modalDescriptionEx": [
           "<ul class='modal__content__text__ul'>",
             "<li>Looks for harmony in the social context, sensitive to social mores</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Usually expresses warmth and empathy</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes to connect with others, is good at reading people and at finding compromises</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Tries to take care of others&rsquo; feelings, sometimes to the point of not being able to separate them from their own feelings</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Uses social graces: is polite, friendly, considerate, appropriate</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is emotionally responsive, self-disclosing to people they want to connect with</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is others centered, relationship-seeking, attentive to others&rsquo; expectations</li>",
           "</ul>"
         ],
@@ -66,17 +66,17 @@
         "modalDescriptionIn": [
           "<ul class='modal__content__text__ul'>",
             "<li>Is analytical, strives for logical consistency</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is good at problem solving, thinking internally and making logically precise and conceptual linkages</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Trusts his own logic, even if it goes against the 'norm'</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Seeks to understand the world through finding the logical principles behind phenomena</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes to take things or ideas apart to figure out how they work</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Uses an internal model or structure to evaluate what's observed, comparing the two and looking for similarities and differences</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Uses an internal reasoning process aimed to give order to ideas, through cathegorical and often hierarchical analysis</li>",
           "</ul>"
         ]
@@ -90,17 +90,17 @@
         "modalDescriptionEx": [
           "<ul class='modal__content__text__ul'>",
             "<li>Sees connections, hidden meanings in things</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is quick-witted</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes brainstorming, to envision multiple possibilities</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Oriented to change, prefers to keep options open when making a choice</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is able to entertain a wealth of interpretations from a single idea or external fact</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Cross-contextual thinking: often draws out a pattern from an elaboration of thoughts both concerning the matter and coming in from other contexts</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Focuses on the abstract present or near future</li>",
           "</ul>"
         ],
@@ -108,17 +108,17 @@
         "modalDescriptionIn": [
           "<ul class='modal__content__text__ul'>",
             "<li>Is pragmatic, and often adherent of something</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes familiarity, routine</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Usually links and compares present thoughts, data and experiences to similar ones in the past, or stored data and information</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is likely to recall physical world memories as 'snapshots', associated with feelings and thoughts</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is attentive to bodily sensations</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>May be tied to customs that help sustain and protect what is known and long-lasting</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Focuses on the concrete past</li>",
           "</ul>"
         ]
@@ -130,17 +130,17 @@
         "modalDescriptionEx": [
           "<ul class='modal__content__text__ul'>",
             "<li>Is quickly responsive to the environment, the senses are easily stimulated by anything</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is aware of what's in the physical world in rich detail, actively seeking more inputs to get the whole picture</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes to be involved in physical or materialistic activities, sometimes being totally absorbed by the physical world</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Enjoys the thrill of action in the present moment</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Uses concrete language and factual speech</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes realism and to see immediate results</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Focuses on the concrete present</li>",
           "</ul>"
         ],
@@ -148,17 +148,17 @@
         "modalDescriptionIn": [
           "<ul class='modal__content__text__ul'>",
             "<li>Is influenced by insights, visions and projections on reality, people, present and future events</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is able to conceive novel ways to understand things at a universal level</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Has a tendency to use symbols and metaphors in thought and while speaking</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Elaborates patterns of ideas and multiple perspectives from the unconscious</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Is easily focused on seemingly unusual ideas, visions of future and their realization</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Likes problem solving, strategy and planning</li>",
-            "<div class='modal__line-break'></div>",
+
             "<li>Focuses on the future</li>",
           "</ul>"
         ]
