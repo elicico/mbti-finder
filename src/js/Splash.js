@@ -1,4 +1,5 @@
 var React = require('react');
+var Tappable = require('react-tappable');
 var PropTypes = React.PropTypes;
 
 var Splash = React.createClass({
@@ -23,14 +24,16 @@ var Splash = React.createClass({
             </span>
           </div>
           <div className="splash__subtitle">
-            Find out what types people around you are!
+            Find out what type people around you are!
           </div>
-          <button
-            onClick={ this.handlePageChange }
+          <Tappable
+            onTap={ this.handlePageChange }
+            classBase="splash__button-"
             className="splash__button"
+            pressDelay={ 0 }
             >
             Start typing
-          </button>
+          </Tappable>
         </div>
       </div>
     );

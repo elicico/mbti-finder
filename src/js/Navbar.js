@@ -1,4 +1,5 @@
 var React = require('react');
+var Tappable = require('react-tappable');
 var PropTypes = React.PropTypes;
 
 var Navbar = React.createClass({
@@ -22,20 +23,25 @@ var Navbar = React.createClass({
     return (
       <div className="container-absolute--nav">
         <div className="navbar">
-          <button
+          <Tappable
+            onTap={ this.handlePageBack }
+            classBase="navbar__button-"
+            pressDelay={ 0 }
             className="navbar__button"
-            onClick={ this.handlePageBack }
             >
             <img className="navbar__arrow-left" src="/imgs/arrow-left.svg"/>
-          </button>
+          </Tappable>
           <div className="navbar__title">
             <div className="navbar__title__content">{ this.props.title }</div>
           </div>
-          <button
+          <Tappable
+            onTap={ this.handlePageHelp }
+            classBase="navbar__button-"
+            pressDelay={ 0 }
             className="navbar__button"
-            onClick={ this.handlePageHelp }>
+            >
             <img className="navbar__question-mark" src="/imgs/question.svg"/>
-          </button>
+          </Tappable>
         </div>
       </div>
     );

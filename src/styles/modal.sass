@@ -14,18 +14,19 @@
     background: transparent
     border: 0
     position: fixed
+    display: block
     @extend .clearfix
 
   &__close-mark
     border-radius: 5px
     background-color: #fff
-    padding: 5px
+    padding: 10px
     width: 30px
     float: right
 
   &__content
     padding: 25px
-    margin-top: 30px
+    margin-top: 10px
 
   &__content__title
     font-size: 2em
@@ -33,27 +34,45 @@
     margin-bottom: 20px
 
   &__content__text
-    font-size: 1.3em
-    font-weight: 100
+    font-size: 1.1em
+    font-weight: 300
+    line-height: 1.5em
     margin-bottom: 30px
 
+    &__ul
+      padding-left: 0
+      list-style-type: none
+
+  &__line-break
+    border-bottom: 3px solid #ff4081
+    width: 30px
+    display: block
+    margin: 10px 0
+    border-radius: 3px
+
   &__button-wrapper
-    display: flex
-    justify-content: space-around
-    flex-flow: row nowrap
-    margin-top: 30px
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    padding: 25px 30px 15px 30px
+    background-color: white
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.7)
+    @extend .clearfix
 
     &__select-button, &__dismiss-button
-      flex: 0 0 42%
       padding: 15px 20px
+      width: 100px
       border: 0
       border-radius: 5px
       font-size: 1.3em
       color: white
-      margin-top: 15px
+      text-align: center
 
     &__select-button
       background-color: #ff4081
+      float: right
 
     &__dismiss-button
       background-color: #3f51b5
+      float: left
