@@ -174,10 +174,9 @@ var Dominant = React.createClass({
     );
   },
 
-  renderFunctionButton: function(function) {
+  renderFunctionButton: function(cognfunc) {
     return (
-      <div>BOTTONE { function }</div>
-
+      <div>BOTTONE { cognfunc }</div>
     );
   }
 

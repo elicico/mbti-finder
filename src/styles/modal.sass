@@ -7,30 +7,53 @@
   left: 0
   right: 0
   background-color: #fff
+  font-family: 'Roboto Slab'
 
-.modal__close-button
-  width: 100%
-  background: transparent
-  border: 0
-  position: fixed
-  @extend .clearfix
+  &__close-button
+    width: 100%
+    background: transparent
+    border: 0
+    position: fixed
+    @extend .clearfix
 
-.modal__close-mark
-  border-radius: 5px
-  background-color: #fff
-  padding: 5px
-  width: 30px
-  float: right
+  &__close-mark
+    border-radius: 5px
+    background-color: #fff
+    padding: 5px
+    width: 30px
+    float: right
 
-.modal__content
-  padding: 25px
-  margin-top: 30px
+  &__content
+    padding: 25px
+    margin-top: 30px
 
-.modal__content__title
-  font-size: 2em
-  color: #ff4081
-  margin-bottom: 30px
+  &__content__title
+    font-size: 2em
+    color: #ff4081
+    margin-bottom: 20px
 
-.modal__content__text
-  font-size: 1.3em
-  font-weight: 100
+  &__content__text
+    font-size: 1.3em
+    font-weight: 100
+    margin-bottom: 30px
+
+  &__button-wrapper
+    display: flex
+    justify-content: space-around
+    flex-flow: row nowrap
+    margin-top: 30px
+
+    &__select-button, &__dismiss-button
+      flex: 0 0 42%
+      padding: 15px 20px
+      border: 0
+      border-radius: 5px
+      font-size: 1.3em
+      color: white
+      margin-top: 15px
+
+    &__select-button
+      background-color: #ff4081
+
+    &__dismiss-button
+      background-color: #3f51b5

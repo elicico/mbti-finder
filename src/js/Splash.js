@@ -23,7 +23,7 @@ var Splash = React.createClass({
             </span>
           </div>
           <div className="splash__subtitle">
-            Find out the type of friends around you!
+            Find out what types people around you are!
           </div>
           <button
             onClick={ this.handlePageChange }

@@ -7,17 +7,25 @@ var DATA = {
     {
       buttonLabel: "Te - Fi",
       extraverted: "Te",
-      modalTitleEx: "xxxx",
+      modalTitleEx: <div>Extraverted<br/>Thinking</div>,
       modalDescriptionEx: "yyyy",
-      modalTitleIn: "xxxx2",
+      modalTitleIn: <div>Introverted<br/>Feeling</div>,
       modalDescriptionIn: "yyyy2"
     },
     {
       buttonLabel: "Fe - Ti",
       extraverted: "Fe",
-      modalTitleEx: "xxxxA",
-      modalDescriptionEx: "yyyyA",
-      modalTitleIn: "xxxxA2",
+      modalTitleEx: <div>Extraverted<br/>Feeling</div>,
+      modalDescriptionEx: <ul>
+        <li>Looks for harmony in the social context, sensitive to social mores</li>
+        <li>Usually expresses warmth and empathy</li>
+        <li>Likes to connect with others, is good at reading people and at finding compromises</li>
+        <li>Tries to take care of others&rsquo; feelings, sometimes to the point of not being able to separate them from their own feelings</li>
+        <li>Uses social graces: is polite, friendly, considerate, appropriate</li>
+        <li>Is emotional responsive, self-disclosing to people they want to connect with</li>
+        <li>Is others centered, relationship-seeking, attentive to others&rsquo; expectations</li>
+      </ul>,
+      modalTitleIn: <div>Introverted<br/>Thinking</div>,
       modalDescriptionIn: "yyyyA2"
     }
   ],
@@ -25,17 +33,17 @@ var DATA = {
     {
       buttonLabel: "Ne - Si",
       extraverted: "Ne",
-      modalTitleEx: "xxxx",
+      modalTitleEx: <div>Extraverted<br/>Intuition</div>,
       modalDescriptionEx: "yyyy",
-      modalTitleIn: "xxxx2",
+      modalTitleIn: <div>Introverted<br/>Sensing</div>,
       modalDescriptionIn: "yyyy2"
     },
     {
       buttonLabel: "Se - Ni",
       extraverted: "Se",
-      modalTitleEx: "xxxxA",
+      modalTitleEx: <div>Extraverted<br/>Sensing</div>,
       modalDescriptionEx: "yyyyA",
-      modalTitleIn: "xxxxA2",
+      modalTitleIn: <div>Introverted<br/>Intuition</div>,
       modalDescriptionIn: "yyyyA2"
     }
   ]
@@ -144,16 +152,20 @@ var Functions = React.createClass({
               <div className="modal__content__text">
                 { rightObject.modalDescriptionIn }
               </div>
-              <button
-                onClick={ this.handleModalClose }
-              >
-                dismiss
-              </button>
-              <button
-                onClick={ this.handleModalSelect }
-              >
-                select
-              </button>
+              <div className="modal__button-wrapper">
+                <button
+                  className="modal__button-wrapper__dismiss-button"
+                  onClick={ this.handleModalClose }
+                >
+                  dismiss
+                </button>
+                <button
+                  className="modal__button-wrapper__select-button"
+                  onClick={ this.handleModalSelect }
+                >
+                  select
+                </button>
+              </div>
             </div>
           }
         </Modal>
