@@ -1,13 +1,64 @@
-.page-transition-enter
-  opacity: 0.01
+$duration: 300ms
+$timing-function: cubic-bezier(.36, .66, .04, 1)
+$zindex-view-bottom: 10
+$zindex-view-top: 20
 
-.page-transition-enter.page-transition-enter-active
+.transition-fade-enter
+  opacity: 0
+  transform: scale(1.5)
+
+.transition-fade-enter-active
   opacity: 1
-  transition: opacity 0.3s ease-in
+  transform: scale(1)
+  transition: all $duration $timing-function
 
-.page-transition-leave
+.transition-fade-leave
+  transform: scale(1)
   opacity: 1
 
-.page-transition-leave.page-transition-leave-active
-  opacity: 0.01
-  transition: opacity 0.3s ease-in
+.transition-fade-leave-active
+  opacity: 0
+  transform: scale(1.5)
+  transition: all $duration $timing-function
+
+.transition-push-enter
+  transform: translate3d(100%, 0, 0)
+
+.transition-push-enter-active
+  transform: translate3d(0, 0, 0)
+  transition: all $duration $timing-function
+
+.transition-push-leave
+  transform: translate3d(0, 0, 0)
+
+.transition-push-leave-active
+  transform: translate3d(-100%, 0, 0)
+  transition: all $duration $timing-function
+
+.transition-pop-enter
+  transform: translate3d(-100%, 0, 0)
+
+.transition-pop-enter-active
+  transform: translate3d(0, 0, 0)
+  transition: all $duration $timing-function
+
+.transition-pop-leave
+  transform: translate3d(0, 0, 0)
+
+.transition-pop-leave-active
+  transform: translate3d(100%, 0, 0)
+  transition: all $duration $timing-function
+
+.transition-slide-enter
+  transform: translate3d(0, -100%, 0)
+
+.transition-slide-enter-active
+  transform: translate3d(0, 0, 0)
+  transition: all $duration $timing-function
+
+.transition-slide-leave
+  transform: translate3d(0, 0, 0)
+
+.transition-slide-leave-active
+  transform: translate3d(0, -100%, 0)
+  transition: all $duration $timing-function

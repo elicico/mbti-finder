@@ -57,9 +57,7 @@ var Functions = React.createClass({
   },
 
   getInitialState: function() {
-    return {
-      activeExFunction: null
-    };
+    return { activeExFunction: null };
   },
 
   componentDidMount: function () {
@@ -92,6 +90,7 @@ var Functions = React.createClass({
   handleModalSelect: function(e) {
     e.preventDefault();
     this.props.onSelect(this.state.activeExFunction);
+    this.setState({ activeExFunction: null });
   },
 
   render: function() {
