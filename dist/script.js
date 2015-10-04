@@ -45,9 +45,9 @@ function Constellation (canvas, options) {
       },
       width: window.innerWidth,
       height: window.innerHeight,
-      velocity: 0.1,
-      length: 160,
-      distance: 120,
+      velocity: 0.3,
+      length: 150,
+      distance: 100,
       radius: 170,
       stars: []
     },
@@ -174,8 +174,8 @@ function Constellation (canvas, options) {
   };
 
   this.bind = function () {
-    config.position.x = 500;
-    config.position.y = 100;
+    config.position.x = 320;
+    config.position.y = 10;
   };
 
   this.init = function () {
@@ -194,10 +194,3 @@ $.fn.constellation = function (options) {
   });
 };
 })($, window);
-
-// Init plugin
-$('canvas#my_canvas').constellation({
-line: {
-  color: 'rgba(22, 40, 139, 0.97)'
-}
-});
