@@ -68,15 +68,17 @@ var Functions = React.createClass({
 
   renderFunctionButton: function(elem) {
     return (
-      <button
+      <Tappable
+        onTap={ this.handleButtonClick.bind(this, elem.extraverted) }
+        classBase="functions__tile-"
+        pressDelay={ 0 }
         className="functions__tile"
-        onClick={ this.handleButtonClick.bind(this, elem.extraverted) }
       >
         { elem.buttonLabel }
         <span className="functions__tile__read">
           read more
         </span>
-      </button>
+      </Tappable>
     );
   },
 
@@ -101,16 +103,26 @@ var Functions = React.createClass({
               />
               <div
                 className="modal__content__text"
-                dangerouslySetInnerHTML={{__html: rightObject.modalDescriptionEx.join("") }}
-              />
+                >
+                <ul className='modal__content__text__ul'>
+                  { rightObject.modalDescriptionEx.map(function(listItem) {
+                      return <li>{ listItem }</li>;
+                    }) }
+                </ul>
+              </div>
               <div
                 className="modal__content__title"
                 dangerouslySetInnerHTML={{__html: rightObject.modalTitleIn.replace(" ", "<br/>") }}
               />
               <div
                 className="modal__content__text"
-                dangerouslySetInnerHTML={{__html: rightObject.modalDescriptionIn.join("") }}
-              />
+                >
+                <ul className='modal__content__text__ul'>
+                  { rightObject.modalDescriptionIn.map(function(listItem) {
+                      return <li>{ listItem }</li>;
+                    }) }
+                </ul>
+              </div>
               <div className="modal__button-wrapper">
                 <Tappable
                   onTap={ this.handleModalClose }

@@ -121,7 +121,12 @@ var App = React.createClass({
                   onSelect={ this.handlePageChange.bind(this, "dominant") }
                 />;
       case "res":
-        return <Result key="result" />;
+        return <Result
+                  key="result"
+                  exFunctions={ [this.state.exPerceiving, this.state.exJudging] }
+                  domFunction={ this.state.dominant }
+                  setModalContent={ this.setModalContent }
+                />;
     }
   },
 

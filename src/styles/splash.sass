@@ -4,10 +4,6 @@
   flex-flow: column nowrap
   height: 100vh
   background-color: #3f51b5
-  background-image: url("/imgs/geom.png")
-  background-repeat: no-repeat
-  background-position: top right
-  background-size: 100%
 
 .splash__title
   flex: 0 0 auto
@@ -19,6 +15,7 @@
   text-transform: uppercase
   color: #ff4081
   text-align: center
+  z-index: 2
   @media screen and (min-width: 700px)
     font-size: 8em
 
@@ -38,10 +35,12 @@
   font-size: 1.4em
   font-weight: 100
   width: 80%
+  z-index: 2
   @media screen and (min-width: 700px)
     font-size: 3em
 
 .splash__button
+  z-index: 2
   flex: 0 0 auto
   align-self: center
   font-size: 1.5em
@@ -59,3 +58,7 @@
 
 .splash__button--active
   background-color: darken(#ff4081, 10%)
+
+#my_canvas
+  position: absolute
+  z-index: 1

@@ -6,39 +6,35 @@
         "extraverted": "Te",
         "modalTitleEx": "Extraverted Thinking",
         "modalDescriptionEx": [
-          "<ul class='modal__content__text__ul'>",
-            "<li>Thinking focused in the outside world</li>",
+            "Thinking focused in the outside world",
 
-            "<li>Likes efficiency, applying logical order to the objective world through building structures and making decisions</li>",
+            "Likes efficiency, applying logical order to the objective world through building structures and making decisions",
 
-            "<li>Likes to use charts, tables, graphs, to help cause/effect thinking and pro/cons analysis</li>",
+            "Likes to use charts, tables, graphs, to help cause/effect thinking and pro/cons analysis",
 
-            "<li>Tends to compartmentalize many aspects of life in order to better accomplish objectives</li>",
+            "Tends to compartmentalize many aspects of life in order to better accomplish objectives",
 
-            "<li>Challenges someone's ideas through empirical thinking, often supported with facts, trying to establish order in someone else's process of thinking</li>",
+            "Challenges someone's ideas through empirical thinking, often supported with facts, trying to establish order in someone else's process of thinking",
 
-            "<li>Likes order, organization, logical debates</li>",
+            "Likes order, organization, logical debates",
 
-            "<li>Is good at contingency planning, scheduling, quantifying</li>",
-          "</ul>"
+            "Is good at contingency planning, scheduling, quantifying"
         ],
         "modalTitleIn": "Introverted Feeling",
         "modalDescriptionIn": [
-          "<ul class='modal__content__text__ul'>",
-            "<li>Looks within for feelings and values, trusting and sticking to them, particularly if the rest of the crowd does not</li>",
-            
-            "<li>Is attentive to ethical concerns, striving to fulfill deeply passionate ideas</li>",
+            "Looks within for feelings and values, trusting and sticking to them, particularly if the rest of the crowd does not",
 
-            "<li>Possesses a strong sense of moral and a strong personal sense of right and wrong</li>",
+            "Is attentive to ethical concerns, striving to fulfill deeply passionate ideas",
 
-            "<li>Seeks harmony through alignment of deeply felt values to personal behaviour</li>",
+            "Possesses a strong sense of moral and a strong personal sense of right and wrong",
 
-            "<li>Often uses feelings as a filter for incoming information that matches what is valued, wanted, or worth believing in</li>",
+            "Seeks harmony through alignment of deeply felt values to personal behaviour",
 
-            "<li>Internal sense of reading fine distinctions among feeling tones helps to know when people are being fake, insincere or good</li>",
+            "Often uses feelings as a filter for incoming information that matches what is valued, wanted, or worth believing in",
 
-            "<li>Rarely expresses through actions in the outside world</li>",
-          "</ul>"
+            "Internal sense of reading fine distinctions among feeling tones helps to know when people are being fake, insincere or good",
+
+            "Rarely expresses through actions in the outside world"
         ]
       },
       {
@@ -46,39 +42,35 @@
         "extraverted": "Fe",
         "modalTitleEx": "Extraverted Feeling",
         "modalDescriptionEx": [
-          "<ul class='modal__content__text__ul'>",
-            "<li>Looks for harmony in the social context, sensitive to social mores</li>",
+            "Looks for harmony in the social context, sensitive to social mores",
 
-            "<li>Usually expresses warmth and empathy</li>",
+            "Usually expresses warmth and empathy",
 
-            "<li>Likes to connect with others, is good at reading people and at finding compromises</li>",
+            "Likes to connect with others, is good at reading people and at finding compromises",
 
-            "<li>Tries to take care of others&rsquo; feelings, sometimes to the point of not being able to separate them from their own feelings</li>",
+            "Tries to take care of others&rsquo; feelings, sometimes to the point of not being able to separate them from their own feelings",
 
-            "<li>Uses social graces: is polite, friendly, considerate, appropriate</li>",
+            "Uses social graces: is polite, friendly, considerate, appropriate",
 
-            "<li>Is emotionally responsive, self-disclosing to people they want to connect with</li>",
+            "Is emotionally responsive, self-disclosing to people they want to connect with",
 
-            "<li>Is others centered, relationship-seeking, attentive to others&rsquo; expectations</li>",
-          "</ul>"
+            "Is others centered, relationship-seeking, attentive to others&rsquo; expectations"
         ],
         "modalTitleIn": "Introverted Thinking",
         "modalDescriptionIn": [
-          "<ul class='modal__content__text__ul'>",
-            "<li>Is analytical, strives for logical consistency</li>",
+            "Is analytical, strives for logical consistency",
 
-            "<li>Is good at problem solving, thinking internally and making logically precise and conceptual linkages</li>",
+            "Is good at problem solving, thinking internally and making logically precise and conceptual linkages",
 
-            "<li>Trusts his own logic, even if it goes against the 'norm'</li>",
+            "Trusts his own logic, even if it goes against the 'norm'",
 
-            "<li>Seeks to understand the world through finding the logical principles behind phenomena</li>",
+            "Seeks to understand the world through finding the logical principles behind phenomena",
 
-            "<li>Likes to take things or ideas apart to figure out how they work</li>",
+            "Likes to take things or ideas apart to figure out how they work",
 
-            "<li>Uses an internal model or structure to evaluate what's observed, comparing the two and looking for similarities and differences</li>",
+            "Uses an internal model or structure to evaluate what's observed, comparing the two and looking for similarities and differences",
 
-            "<li>Uses an internal reasoning process aimed to give order to ideas, through cathegorical and often hierarchical analysis</li>",
-          "</ul>"
+            "Uses an internal reasoning process aimed to give order to ideas, through cathegorical and often hierarchical analysis"
         ]
       }
     ],
@@ -88,39 +80,35 @@
         "extraverted": "Ne",
         "modalTitleEx": "Extraverted Intuition",
         "modalDescriptionEx": [
-          "<ul class='modal__content__text__ul'>",
-            "<li>Sees connections, hidden meanings in things</li>",
+            "Sees connections, hidden meanings in things",
 
-            "<li>Is quick-witted</li>",
+            "Is quick-witted",
 
-            "<li>Likes brainstorming, to envision multiple possibilities</li>",
+            "Likes brainstorming, to envision multiple possibilities",
 
-            "<li>Oriented to change, prefers to keep options open when making a choice</li>",
+            "Oriented to change, prefers to keep options open when making a choice",
 
-            "<li>Is able to entertain a wealth of interpretations from a single idea or external fact</li>",
+            "Is able to entertain a wealth of interpretations from a single idea or external fact",
 
-            "<li>Cross-contextual thinking: often draws out a pattern from an elaboration of thoughts both concerning the matter and coming in from other contexts</li>",
+            "Cross-contextual thinking: often draws out a pattern from an elaboration of thoughts both concerning the matter and coming in from other contexts",
 
-            "<li>Focuses on the abstract present or near future</li>",
-          "</ul>"
+            "Focuses on the abstract present or near future"
         ],
         "modalTitleIn": "Introverted Sensing",
         "modalDescriptionIn": [
-          "<ul class='modal__content__text__ul'>",
-            "<li>Is pragmatic, and often adherent of something</li>",
+            "Is pragmatic, and often adherent of something",
 
-            "<li>Likes familiarity, routine</li>",
+            "Likes familiarity, routine",
 
-            "<li>Usually links and compares present thoughts, data and experiences to similar ones in the past, or stored data and information</li>",
+            "Usually links and compares present thoughts, data and experiences to similar ones in the past, or stored data and information",
 
-            "<li>Is likely to recall physical world memories as 'snapshots', associated with feelings and thoughts</li>",
+            "Is likely to recall physical world memories as 'snapshots', associated with feelings and thoughts",
 
-            "<li>Is attentive to bodily sensations</li>",
+            "Is attentive to bodily sensations",
 
-            "<li>May be tied to customs that help sustain and protect what is known and long-lasting</li>",
+            "May be tied to customs that help sustain and protect what is known and long-lasting",
 
-            "<li>Focuses on the concrete past</li>",
-          "</ul>"
+            "Focuses on the concrete past"
         ]
       },
       {
@@ -128,41 +116,160 @@
         "extraverted": "Se",
         "modalTitleEx": "Extraverted Sensing",
         "modalDescriptionEx": [
-          "<ul class='modal__content__text__ul'>",
-            "<li>Is quickly responsive to the environment, the senses are easily stimulated by anything</li>",
+            "Is quickly responsive to the environment, the senses are easily stimulated by anything",
 
-            "<li>Is aware of what's in the physical world in rich detail, actively seeking more inputs to get the whole picture</li>",
+            "Is aware of what's in the physical world in rich detail, actively seeking more inputs to get the whole picture",
 
-            "<li>Likes to be involved in physical or materialistic activities, sometimes being totally absorbed by the physical world</li>",
+            "Likes to be involved in physical or materialistic activities, sometimes being totally absorbed by the physical world",
 
-            "<li>Enjoys the thrill of action in the present moment</li>",
+            "Enjoys the thrill of action in the present moment",
 
-            "<li>Uses concrete language and factual speech</li>",
+            "Uses concrete language and factual speech",
 
-            "<li>Likes realism and to see immediate results</li>",
+            "Likes realism and to see immediate results",
 
-            "<li>Focuses on the concrete present</li>",
-          "</ul>"
+            "Focuses on the concrete present"
         ],
         "modalTitleIn": "Introverted Intuition",
         "modalDescriptionIn": [
-          "<ul class='modal__content__text__ul'>",
-            "<li>Is influenced by insights, visions and projections on reality, people, present and future events</li>",
+            "Is influenced by insights, visions and projections on reality, people, present and future events",
 
-            "<li>Is able to conceive novel ways to understand things at a universal level</li>",
+            "Is able to conceive novel ways to understand things at a universal level",
 
-            "<li>Has a tendency to use symbols and metaphors in thought and while speaking</li>",
+            "Has a tendency to use symbols and metaphors in thought and while speaking",
 
-            "<li>Elaborates patterns of ideas and multiple perspectives from the unconscious</li>",
+            "Elaborates patterns of ideas and multiple perspectives from the unconscious",
 
-            "<li>Is easily focused on seemingly unusual ideas, visions of future and their realization</li>",
+            "Is easily focused on seemingly unusual ideas, visions of future and their realization",
 
-            "<li>Likes problem solving, strategy and planning</li>",
+            "Likes problem solving, strategy and planning",
 
-            "<li>Focuses on the future</li>",
-          "</ul>"
+            "Focuses on the future"
         ]
       }
     ]
-  }
+  },
+
+  "domrep": [
+    {
+      "dominant": "Ne",
+      "domTitle": "Dominant Ne",
+      "domDescription": [
+        "Comfortable inattention to sensorial data",
+        "Flexibility, adaptability, risk taking behaviour",
+        "Optimism about future possibilities"
+      ],
+      "infTitle": "Inferior Si",
+      "infDescription": [
+        "Withdrawal and depression",
+        "Obsessiveness",
+        "Excessive and distorted focus on the body and on bodily sensations"
+      ]
+    },
+    {
+      "dominant": "Se",
+      "domTitle": "Dominant Se",
+      "domDescription": [
+        "Focus on external data",
+        "Sensual/aesthetic pleasure seeking",
+        "Delight in the outer world"
+      ],
+      "infTitle": "Inferior Ni",
+      "infDescription": [
+        "Internal confusion",
+        "Inappropriate attribution of meaning to everyday matters",
+        "Obsessive interest in unseen forces of cosmic/spiritual proportions"
+      ]
+    },
+    {
+      "dominant": "Te",
+      "domTitle": "Dominant Te",
+      "domDescription": [
+        "High competence in subjects of interest",
+        "Constant search for truth and accuracy",
+        "Decisive and calculated action taking"
+      ],
+      "infTitle": "Inferior Fi",
+      "infDescription": [
+        "Hypersensitivity to inner emotional states",
+        "Outbursts of emotion",
+        "Generalized fear of feeling"
+      ]
+    },
+    {
+      "dominant": "Fe",
+      "domTitle": "Dominant Fe",
+      "domDescription": [
+        "Comfortable inattention to logical reasoning",
+        "Sensitivity to others welfare",
+        "Sharing of emotions"
+      ],
+      "infTitle": "Inferior Ti",
+      "infDescription": [
+        "Excessive criticism",
+        "Convoluted logic in thinking or interpreting matters",
+        "Compulsive search for truth"
+      ]
+    },
+    {
+      "dominant": "Ni",
+      "domTitle": "Dominant Ni",
+      "domDescription": [
+        "Intellectual clarity",
+        "Accurate interpretation of received perceptions",
+        "Visionary insights on various topics, people and things"
+      ],
+      "infTitle": "Inferior Se",
+      "infDescription": [
+        "Obsessive focus on external data",
+        "Overindulgence in sensual pleasures",
+        "Adversarial attitude toward the outer world"
+      ]
+    },
+    {
+      "dominant": "Si",
+      "domTitle": "Dominant Si",
+      "domDescription": [
+        "Natural attitude to seek solitude and reflection",
+        "Attention to facts and details",
+        "Constant awareness of internal experience of the present, compared and linked to past memories, data and experiences"
+      ],
+      "infTitle": "Inferior Ne",
+      "infDescription": [
+        "Loss of control over facts and details",
+        "Impulsiveness",
+        "Tendency to irrationally catastrophize over matters"
+      ]
+    },
+    {
+      "dominant": "Ti",
+      "domTitle": "Dominant Ti",
+      "domDescription": [
+        "Impersonal and construnctive criticism over matters",
+        "Logical internal analysis of every subject of interest",
+        "Search for accuracy and truth"
+      ],
+      "infTitle": "Inferior Fe",
+      "infDescription": [
+        "Use of logical thinking irrationally emphasized to an extreme",
+        "Hypersensitivity to relationships",
+        "Uncontrolled emotionalism"
+      ]
+    },
+    {
+      "dominant": "Fi",
+      "domTitle": "Dominant Fi",
+      "domDescription": [
+        "Inner emotional harmony",
+        "Economy of emotional expression in the outer world",
+        "Acceptance of feelings as non-logical"
+      ],
+      "infTitle": "Inferior Te",
+      "infDescription": [
+        "Irrational judgments of incompetence towards self and people",
+        "Aggressive criticism",
+        "Precipitous action taking in matters where strong feelings are involved"
+      ]
+    }
+  ]
 }

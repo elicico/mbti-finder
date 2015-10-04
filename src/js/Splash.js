@@ -7,15 +7,17 @@ var Splash = React.createClass({
     onContinue: PropTypes.func.isRequired
   },
 
-  handlePageChange: function(e) {
-    e.preventDefault();
-    this.props.onContinue();
-  },
+  // handlePageChange: function(e) {
+  //   e.preventDefault();
+  //   this.props.onContinue();
+  // },
 
   render: function() {
     return (
       <div className="container-absolute">
         <div className="splash">
+          <canvas id="my_canvas">
+          </canvas>
           <div className="splash__title">
             mbti
             <br/>
