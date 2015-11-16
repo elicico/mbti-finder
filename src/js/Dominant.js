@@ -25,7 +25,7 @@ var Dominant = React.createClass({
     this.props.setModalContent(
       <div>
         <div className="modal__content__title">Finding the Dominant function</div>
-        <div className="modal__content__text">Now that you have identified the four functions that you think are being used, all is left to do is to recognise the dominant one among them. It is usually the function that manifests itself most frequently, or as a sort of constant and more or less underlying attitude in the person. By clicking on one of the buttons you’ll see a brief list of the main aspects through which that function expresses itself in the dominant position of the stack; you will also see another brief list that generalizes the behaviour of the inferior function related. That way it will be easier to determine the dominant function, especially if it’s an introverted one, thus less visible in the outer world.</div>
+        <div className="modal__content__text modal__content__text--help">Now that you have identified the four functions that you think are being used, all is left to do is to recognise the dominant one among them. It is usually the function that manifests itself most frequently, or as a sort of constant and more or less underlying attitude in the person. By clicking on one of the buttons you’ll see a brief list of the main aspects through which that function expresses itself in the dominant position of the stack; you will also see another brief list that generalizes the behaviour of the inferior function related. That way it will be easier to determine the dominant function, especially if it’s an introverted one, thus less visible in the outer world.</div>
       </div>
     );
     this.setInFunctions();
@@ -65,8 +65,8 @@ var Dominant = React.createClass({
 
     return (
       <div className="container-absolute">
-        <div className="dominants">
-          <div className="functions__label">
+        <div className="dominant">
+          <div className="dominant__label">
             Which function is the dominant one?
           </div>
           { functions.map(this.renderFunctionButton) }
@@ -76,12 +76,13 @@ var Dominant = React.createClass({
     );
   },
 
-  renderFunctionButton: function(domFunc) {
+  renderFunctionButton: function(domFunc, i) {
     return (
       <Tappable
         onTap={ this.handleButtonClick.bind(this, domFunc) }
         classBase="dominant__tile-"
         pressDelay={ 0 }
+        key={ i }
         className="dominant__tile"
       >
         { domFunc }
@@ -115,7 +116,7 @@ var Dominant = React.createClass({
                 >
                 <ul className='modal__content__text__ul'>
                   { rightObject.domDescription.map(function(listItem) {
-                      return <li>{ listItem }</li>;
+                      return <li key={ listItem }>{ listItem }</li>;
                     }) }
                 </ul>
               </div>
@@ -128,7 +129,7 @@ var Dominant = React.createClass({
                 >
                 <ul className='modal__content__text__ul'>
                   { rightObject.infDescription.map(function(listItem) {
-                      return <li>{ listItem }</li>;
+                      return <li key={ listItem }>{ listItem }</li>;
                     }) }
                 </ul>
               </div>

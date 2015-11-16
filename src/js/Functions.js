@@ -21,14 +21,14 @@ var Functions = React.createClass({
       this.props.setModalContent(
         <div>
           <div className="modal__content__title">Typing perceiving functions</div>
-          <div className="modal__content__text">In the cognitive process, perceiving functions are used when you need to gather information, whether from the external or from internal world. Here you’ll see the two couples that these four functions can make. By clicking on one of the two buttons, you’ll see a list of generalized behaviours of those people who use the two functions selected. In each couple, the extraverted one is easier to notice in the outer world; also, one is usually more developed than the other, so try not to obsess too much over getting a perfect match (:</div>
+          <div className="modal__content__text modal__content__text--help">In the cognitive process, perceiving functions are used when you need to gather information, whether from the external or from internal world. Here you’ll see the two couples that these four functions can make. By clicking on one of the two buttons, you’ll see a list of generalized behaviours of those people who use the two functions selected. In each couple, the extraverted one is easier to notice in the outer world; also, one is usually more developed than the other, so try not to obsess too much over getting a perfect match (:</div>
         </div>
       );
     } else {
       this.props.setModalContent(
         <div>
           <div className="modal__content__title">Typing judging functions</div>
-          <div className="modal__content__text">In the cognitive process, judging functions are used when you need to make decisions, whether in the external or in the internal world. Here you’ll see the two couples that these four functions can make. By clicking on one of the two buttons, you’ll see a list of generalized behaviours of those people who use the two functions selected. In each couple, the extraverted one is easier to notice in the outer world; also, one is usually more developed than the other, so try not to obsess too much over getting a perfect match (:</div>
+          <div className="modal__content__text modal__content__text--help">In the cognitive process, judging functions are used when you need to make decisions, whether in the external or in the internal world. Here you’ll see the two couples that these four functions can make. By clicking on one of the two buttons, you’ll see a list of generalized behaviours of those people who use the two functions selected. In each couple, the extraverted one is easier to notice in the outer world; also, one is usually more developed than the other, so try not to obsess too much over getting a perfect match (:</div>
         </div>
       );
     }
@@ -66,12 +66,13 @@ var Functions = React.createClass({
     );
   },
 
-  renderFunctionButton: function(elem) {
+  renderFunctionButton: function(elem, i) {
     return (
       <Tappable
         onTap={ this.handleButtonClick.bind(this, elem.extraverted) }
         classBase="functions__tile-"
         pressDelay={ 0 }
+        key={ i }
         className="functions__tile"
       >
         { elem.buttonLabel }
@@ -106,7 +107,7 @@ var Functions = React.createClass({
                 >
                 <ul className='modal__content__text__ul'>
                   { rightObject.modalDescriptionEx.map(function(listItem) {
-                      return <li>{ listItem }</li>;
+                      return <li key={ listItem }>{ listItem }</li>;
                     }) }
                 </ul>
               </div>
@@ -119,7 +120,7 @@ var Functions = React.createClass({
                 >
                 <ul className='modal__content__text__ul'>
                   { rightObject.modalDescriptionIn.map(function(listItem) {
-                      return <li>{ listItem }</li>;
+                      return <li key={ listItem }>{ listItem }</li>;
                     }) }
                 </ul>
               </div>

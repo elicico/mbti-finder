@@ -85,7 +85,7 @@ var App = React.createClass({
         <ReactCSSTransitionGroup transitionName="transition-slide">
           { this.renderNavbar() }
         </ReactCSSTransitionGroup>
-        <ReactCSSTransitionGroup transitionName={ this.state.transition }>
+        <ReactCSSTransitionGroup transitionName="transition-push">
           { this.renderPages() }
         </ReactCSSTransitionGroup>
           { this.renderModal() }
@@ -137,6 +137,7 @@ var App = React.createClass({
           key="navbar"
           onPageBack={ this.handlePageBack }
           onPageHelp={ this.handlePageHelp }
+          isHelpVisible={ this.calculateStep() !== "res" }
           title={ TITLES[this.calculateStep()] }
         />
       );
@@ -152,6 +153,10 @@ var App = React.createClass({
         { this.state.modalContent }
       </Modal>
     );
+  },
+
+  propTypes: {
+    transitionName: PropTypes.string
   }
 
 });

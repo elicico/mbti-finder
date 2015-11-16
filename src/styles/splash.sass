@@ -5,63 +5,62 @@
   height: 100vh
   background-color: #3f51b5
 
-.splash__title
-  flex: 0 0 auto
-  font-size: 5em
-  font-weight: 700
-  letter-spacing: 5px
-  margin-top: 20vh
-  line-height: .7em
-  text-transform: uppercase
-  color: #ff4081
-  text-align: center
-  z-index: 2
-  @media screen and (min-width: 700px)
-    font-size: 8em
+  &__title
+    flex: 0 0 auto
+    font-size: 5em
+    font-weight: 700
+    letter-spacing: 5px
+    margin-top: 20vh
+    line-height: .7em
+    text-transform: uppercase
+    color: #ff4081
+    text-align: center
+    z-index: 2
+    @media screen and (min-width: 700px)
+      font-size: 8em
 
-.splash__title--small
-  font-size: .75em
-  font-weight: 300
-  text-transform: lowercase
-  color: #fff
-  letter-spacing: 10px
-  padding-left: 5px
+    &--small
+      font-size: .75em
+      font-weight: 300
+      text-transform: lowercase
+      color: #fff
+      letter-spacing: 10px
+      padding-left: 5px
 
-.splash__subtitle
-  flex: 0 0 auto
-  align-self: center
-  text-align: center
-  color: #c5cae9
-  font-size: 1.4em
-  font-weight: 100
-  width: 80%
-  z-index: 2
-  @media screen and (min-width: 700px)
-    font-size: 3em
+  &__subtitle
+    flex: 0 0 auto
+    align-self: center
+    text-align: center
+    color: #c5cae9
+    font-size: 1.4em
+    font-weight: 100
+    width: 80%
+    z-index: 2
+    @media screen and (min-width: 700px)
+      font-size: 3em
 
-.splash__button
-  z-index: 2
-  flex: 0 0 auto
-  align-self: center
-  font-size: 1.5em
-  display: block
-  text-align: center
-  padding: 13px 25px
-  background-color: #ff4081
-  color: white
-  border: 0
-  border-radius: 5px
-  letter-spacing: 1px
-  @media screen and (min-width: 700px)
-    font-size: 3em
-    padding: 25px 42px
+  &__button
+    z-index: 2
+    flex: 0 0 auto
+    align-self: center
+    font-size: 1.5em
+    display: block
+    text-align: center
+    padding: 13px 25px
+    background-color: #ff4081
+    color: white
+    border: 0
+    border-radius: 5px
+    letter-spacing: 1px
+    margin-bottom: 3vh
+    @media screen and (min-width: 700px)
+      font-size: 3em
+      padding: 25px 42px
 
-.splash__button--active
-  background-color: darken(#ff4081, 10%)
+    &--active
+      background-color: darken(#ff4081, 10%)
 
-#my_canvas
-  position: absolute
-  z-index: 1
-
-#stats
-  display: none
+  &__canvas
+    position: absolute
+    z-index: 1
+    margin-top: -100px

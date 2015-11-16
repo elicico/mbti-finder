@@ -25,42 +25,53 @@ var Result = React.createClass({
           <div className="result__label">
             Your type is
           </div>
-          { this.renderResult() }
+          <div className="result__tile">
+            { this.acronym() }
+          </div>
+          <div className="result__label">
+            useful description links:
+          </div>
+          <a
+            href={ `https://www.personalitypage.com/html/${ this.acronym() }.html` }
+            target="_blank"
+            className="result__link"
+            >
+            portrait
+          </a>
+          <br/>
+          <a
+            href={ `http://www.humanmetrics.com/personality/${ this.acronym() }` }
+            target="_blank"
+            className="result__link"
+            >
+            functional analysis
+          </a>
+          <br/>
+          <a
+            href={ `http://funkymbtifiction.tumblr.com/tagged/c%3A+${ this.acronym() }` }
+            target="_blank"
+            className="result__link"
+            >
+            characters in fiction
+          </a>
       </div>
       </div>
     );
   },
 
-  renderResult: function() {
-
+  acronym: function() {
     var inPerceiving = this.props.exFunctions[0] === "Ne" ? "Si" : "Ni";
     var inJudging = this.props.exFunctions[1] === "Te" ? "Fi" : "Ti";
 
     switch (this.props.domFunction) {
       case inJudging:
-        return (
-          <div className="result__tile">
-            I{ this.props.exFunctions[0].slice(0, 1) }{ inJudging.slice(0, 1) }P
-          </div>
-        );
+        return `I${ this.props.exFunctions[0].slice(0, 1) }${ inJudging.slice(0, 1) }P`;
       case this.props.exFunctions[1]:
-        return (
-          <div className="result__tile">
-            E{ inPerceiving.slice(0, 1) }{ this.props.exFunctions[1].slice(0, 1) }J
-          </div>
-        );
+        return `E${ inPerceiving.slice(0, 1) }${ this.props.exFunctions[1].slice(0, 1) }J`;
       case inPerceiving:
-        return (
-          <div className="result__tile">
-            I{ inPerceiving.slice(0, 1) }{ this.props.exFunctions[1].slice(0, 1) }J
-          </div>
-        );
+        return `I${ inPerceiving.slice(0, 1) }${ this.props.exFunctions[1].slice(0, 1) }J`;
       case this.props.exFunctions[0]:
-        return (
-          <div className="result__tile">
-            E{ this.props.exFunctions[0].slice(0, 1) }{ inJudging.slice(0, 1) }P
-          </div>
-        );
+        return `E${ this.props.exFunctions[0].slice(0, 1) }${ inJudging.slice(0, 1) }P`;
     };
   }
 

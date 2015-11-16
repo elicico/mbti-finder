@@ -1,7 +1,7 @@
 var React = require('react');
 
 var Portal = React.createClass({
-  componentDidMount() {
+  componentDidMount: function() {
     this.portal = document.createElement('div');
     document.getElementById("portals").appendChild(this.portal);
     this.renderPortalContent();
@@ -11,7 +11,7 @@ var Portal = React.createClass({
     this.renderPortalContent();
   },
 
-  componentWillUnmount() {
+  componentWillUnmount: function() {
     setTimeout(
       function() {
         React.unmountComponentAtNode(this.portal);

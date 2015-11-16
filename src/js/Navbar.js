@@ -6,7 +6,8 @@ var Navbar = React.createClass({
   propTypes: {
     title: PropTypes.string.isRequired,
     onPageBack: PropTypes.func.isRequired,
-    onPageHelp: PropTypes.func.isRequired
+    onPageHelp: PropTypes.func.isRequired,
+    isHelpVisible: PropTypes.bool
   },
 
   handlePageBack: function(e) {
@@ -34,14 +35,17 @@ var Navbar = React.createClass({
           <div className="navbar__title">
             <div className="navbar__title__content">{ this.props.title }</div>
           </div>
-          <Tappable
-            onTap={ this.handlePageHelp }
-            classBase="navbar__button-"
-            pressDelay={ 0 }
-            className="navbar__button"
-            >
-            <img className="navbar__question-mark" src="/imgs/question.svg"/>
-          </Tappable>
+          {
+            this.props.isHelpVisible &&
+            <Tappable
+              onTap={ this.handlePageHelp }
+              classBase="navbar__button-"
+              pressDelay={ 0 }
+              className="navbar__button"
+              >
+              <img className="navbar__question-mark" src="/imgs/question.svg"/>
+            </Tappable>
+          }
         </div>
       </div>
     );
